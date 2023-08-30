@@ -8,6 +8,7 @@ published: true
 一位喜欢中国传统文化的CICD技术宅男的分享.
 
 
+![](/knowledge-wiki/assets/images/如人饮水冷暖自知.png)
 
 
 This is both documentation and [demo](Demo.md) of [git-wiki theme](https://github.com/Drassil/git-wiki-theme) project.
