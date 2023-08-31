@@ -28,18 +28,18 @@ C -->|Two| E[Result 2]
 
 
 
-```plantuml!
+```plantuml
 Bob -> Alice : hello world
 ```
 
 
 
-```mermaid!
+```mermaid
 pie title Pets adopted by volunteers
   "Dogs" : 386
   "Cats" : 85
   "Rats" : 35
-```
+
 
 
 @startuml
