@@ -62,9 +62,9 @@ plugins:
  - jekyll-seo-tag
  - jekyll-sitemap
  - jekyll-avatar
+ - jekyll-spaceship
  - jemoji
  - jekyll-mentions
- - jekyll-spaceship
   
 #
 # INCLUDING HOOKS
