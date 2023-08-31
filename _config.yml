@@ -64,6 +64,7 @@ plugins:
  - jekyll-avatar
  - jemoji
  - jekyll-mentions
+ - jekyll-spaceship
   
 #
 # INCLUDING HOOKS
