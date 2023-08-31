@@ -3,9 +3,9 @@ redirect_from: /
 published: true
 ---
 
-# Welcome to Shawn Sang knowledge sharing Pages!
+# 欢迎来到 技术宅男 关于中国传统文化 和 CICD 的分享站
 
-一位喜欢中国传统文化的CICD技术宅男的分享.
+
 
 
 ![](/knowledge-wiki/assets/images/如人饮水冷暖自知.png)
@@ -38,6 +38,7 @@ The easier and faster way to use git-wiki is the "skeleton" method.
 For more installation options see the [Installation instructions](#installation-instructions)
 
 ## CICD 
+
 
 [Install JFrog Container Registry](Instal-JFrog-Container-Registry.md)
 
