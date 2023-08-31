@@ -19,8 +19,20 @@
 
 
 
-flowchart LR
+```flowchart LR
 A[Hard] -->|Text| B(Round)
 B --> C{Decision}
 C -->|One| D[Result 1]
 C -->|Two| E[Result 2]
+```
+
+```plantuml!
+Bob -> Alice : hello world
+```
+
+```mermaid!
+pie title Pets adopted by volunteers
+  "Dogs" : 386
+  "Cats" : 85
+  "Rats" : 35
+```
