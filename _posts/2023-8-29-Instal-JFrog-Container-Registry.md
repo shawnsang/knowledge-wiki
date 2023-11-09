@@ -189,7 +189,7 @@ Edit the file /etc/docker/daemon.json e.g.
 where 15.206.81.210 is ipaddress of registry and 9001 is your port on which registry is configured.
 
 
-** In MacOS **\
+** Using Rancher Desktop In MacOS **\
 
 ```
 rdctl shell
