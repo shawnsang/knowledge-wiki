@@ -126,7 +126,7 @@ Podman 3.0.0+ 版本配置文件格式发生了变化，
 [[registry]]
 prefix = "9.30.166.115:8082"
 location = "9.30.166.115:8082"
-inescure = true
+insecure = true
 
 
 podman login 9.30.166.115:8082
@@ -187,6 +187,21 @@ Edit the file /etc/docker/daemon.json e.g.
     $ service docker restart
 
 where 15.206.81.210 is ipaddress of registry and 9001 is your port on which registry is configured.
+
+
+** In MacOS **\
+
+```
+rdctl shell
+```
+
+Modify latest line in  **/etc/conf.d/docker**
+
+```
+sudo vi /etc/conf.d/docker
+DOCKER_OPTS="--insecure-registry=9.30.166.115:8082"
+```
+Restart Rancher Desktop
 
 
 
