@@ -24,12 +24,12 @@ published: true
 
 
 
-## CICD 
+## CICD/DevOps
 
 做CICD很有意思，同时，也很有压力。做的好了，不显眼，项目整个运行很顺畅，大家觉得本该如此。做的不好了，妨碍的项目进度，立刻就在老板面前出了名。 
 
 
-从2004年开始工作，软件开发、项目管理、配置管理、参与公司 CMMi Level4 评估，到后来，全面负责SPSS Statistic 的 CICD工作，而后参加 Match360（Cloud Native）的开发，这里分享一下我的经验，不涉及太细节的技术，权当故事听了。
+从2004年开始工作，软件开发、项目管理、配置管理、参与公司 CMMi Level4 评估，到后来，全面负责SPSS Statistic 的 CICD工作，而后参加 Match360（Cloud Native）的开发和DevOps任务，这里分享一下我的经验，不涉及太细节的技术，权当故事听了。
 
 
 ## Who am I
