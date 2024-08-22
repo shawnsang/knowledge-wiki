@@ -2,7 +2,7 @@
 layout: "git-wiki-bs-lux"
 ---
 
-# Theme: Lux
+# Topic: Lux
 
 
 This is an example of layout built using [bootstrap lux](https://bootswatch.com/lux/)

@@ -2,26 +2,9 @@
 layout: "git-wiki-bs-github"
 ---
 
-# Theme: Github
+# Topic ： Github GitLab
 
 
-This is an example of layout built using github css file
+这两个工具最大的区别，Gitlab 有免费版本，可以本地安装。Github有公共免费版本，但是国内访问不稳定。如果是个人初创项目，当然用GitLab比较方便。 
 
-
-To use it as your default theme you've to change layout configuration in your _config.yml, for example:
-
-```
-defaults:
- -
-    scope:
-      path: ""
-    values:
-      layout: "git-wiki-bs-github"
- -
-    scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "git-wiki-bs-github"
-```
 

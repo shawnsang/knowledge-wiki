@@ -2,6 +2,12 @@
 
 **CI/CD 被定义为一组能够快速、可靠地交付代码更改的开发实践。DevOps 被定义为思想、实践、流程和技术的集合，允许开发和运营团队共同工作以简化产品开发。虽然这两个概念相关，但它们在很多方面都有所不同。**
 
+
+最近看到一个图，非常清晰的描述了 CICD/DevOps之间的关系。 
+
+![](/knowledge-wiki/assets/images/posts/cicd_devops/cicd_devops.png)
+
+
 ---
 
 # 分类比较
