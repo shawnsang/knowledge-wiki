@@ -1,6 +1,7 @@
 ---
-layout: "git-wiki-bs-github"
+layout: "git-wiki-post"
 ---
+
 
 以下是Gitlab local 安装配置的一个步骤参考。
 

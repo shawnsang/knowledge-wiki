@@ -1,4 +1,9 @@
 
+---
+layout: "git-wiki-post"
+---
+
+
 # Client Application CICD
 
 虽然Cloud 的应用程序越来越多，但是 Client 应用依旧不少，尤其是还有不少是依赖 OS 平台的应用程序。 下面就简单介绍一个基于 Client 应用的 CICD 流程，其中会包含不少 Tips.

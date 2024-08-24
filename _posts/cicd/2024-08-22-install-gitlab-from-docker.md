@@ -1,7 +1,7 @@
+---
+layout: "git-wiki-post"
+---
 
----
-layout: "git-wiki-bs-github"
----
 
 
 
