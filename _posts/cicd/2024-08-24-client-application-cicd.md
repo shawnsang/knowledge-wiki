@@ -4,7 +4,7 @@
 虽然Cloud 的应用程序越来越多，但是 Client 应用依旧不少，尤其是还有不少是依赖 OS 平台的应用程序。 下面就简单介绍一个基于 Client 应用的 CICD 流程，其中会包含不少 Tips.
 
 
-## 基本工具
+## 1. 基本工具
 
 Source code 管理，现在基本都是 git 为基础，要么是 Github， 要么是 Gitlab, 这里以 Github 为例了。
 
@@ -16,16 +16,19 @@ Jforg Artifactory： artifact 管理，可以管理中间的 components，也可
 
 通知提醒，包括邮件，slack 等，作为Jenkins的基本操作，不在这里单独描述。
 
-## 开发管理
+## 2. 开发管理
 
 Code commit: Github main branch 受保护，代码不能直接提交到 main, 需要以 PR 的形式提交。 在 PR 上有Jenkins 的约束检查job，包括基本的代码编译，单元测试，代码覆盖率检查，以及静态代码扫描，所有过程均正确，该 PR 可以被 merge 到 main branch。
 
 Artifact 管理： 区分 Dev 和 Release repo， Dev repo 仅保存开发过程中的临时结果，可以随时被清理。 Release Repo 保存经过测试的 components 和 installers。
 
 
-## 详细流程
+## 3. 详细流程
+下面就各个步骤简单介绍一下。
 
-### PR 流程
+
+### 3.1 PR 流程
+
 ![](/knowledge-wiki/assets/images/posts/cicd_devops/client-app-cicd/PR.png)
 
 Github PR 创建后，通过 Jenkins 的 Webhook 启动 Jenkins job，对 PR branch 进行编译， maven 编译后，根据实际情况，可以保存 snaphost 到 artifactory，也可以不保存，大部分情况下，不太会用的上，不保存可以节省网络资源和 Artifactory 的磁盘空间。调用 junit做单元测试，jacoco做代码覆盖率测试，最后通过 sonarqube 得到代码覆盖率是否达标，以及一些代码的静态检查，如果复杂逻辑检查，如果不过关，则 Jenkins job failed，PR会被阻挡，不能 merge。 开发人员通过 Jenkins job 的日志可以查看具体的问题。
@@ -33,7 +36,8 @@ Github PR 创建后，通过 Jenkins 的 Webhook 启动 Jenkins job，对 PR bra
 
 
 
-### Code merged to main
+### 3.2 Code merged to main
+
 ![](/knowledge-wiki/assets/images/posts/cicd_devops/client-app-cicd/main.png)
 
 当PR merge 到 main branch， jenkins job 可以直接对 main 监控，启动编译工作，编译release 版本的 jar 文件，如果觉得需要，仍然可以添加 单元测试的工作。覆盖率测试需要 jar的debug版本，所以，这里就不用了。 编译好的 component 可以保存到 Dev repo。
@@ -43,16 +47,25 @@ Github PR 创建后，通过 Jenkins 的 Webhook 启动 Jenkins job，对 PR bra
 集成测试成功的 component 才会被推送到 release repo。
 
 
-### integration
+### 3.3 Integration
+
 ![](/knowledge-wiki/assets/images/posts/cicd_devops/client-app-cicd/installer.png)
 
-client 应用程序必然都会有一个安装包，以便于用户下载和安装。 这里可以是 集成测试完成后自动触发，也可以是其他策略。总之，先将所有的依赖 components 和 必要的配置信息全部整理好，到一个 stage folder，然后打包成为 installer。 
+client 应用程序必然都会有一个安装包，以便于用户下载和安装。 这里可以是 集成测试完成后自动触发，也可以是其他策略。总之，先将所有的依赖 components 和 必要的配置信息全部整理好，到一个 stage folder，然后打包成为 installer。 这个 stage folder 非常关键，installer 所有 harvest的文件只从这个 Stage 目录中，用动态方式获取，不要固定文件名和路径，不要直接从其他地方 harvest，会极大降低 installer 的复杂度。当需要增加，或者删除文件时，不需要修改 installer 工程。 
+
+另外，当安装文件出现问题时，stage 目录很好帮助溯源。
+
+
 
 这里还隐藏了一个关键任务，就是 installer 签名。 Windows上需要使用 CodeSign 做签名，MacOS 上需要完成 notarization。Linux上可以自签名。 Windows 和 MacOS上都是需要付费得到相应证书的。 
 
 打包好的 installer ， 也是暂存 Dev repo，还需要进行 regression test。
 
-### release 
+
+
+
+### 3.4 Release 
+
 ![](/knowledge-wiki/assets/images/posts/cicd_devops/client-app-cicd/regressiontest.png)
 
 完成regression test 的安装包，最后被放置到 release repo，随时可以发布到下载站点，供用户下载了。 
