@@ -7,7 +7,7 @@ layout: "git-wiki-post"
 
 ## 2024 新加坡 - 快乐六一夏令营  中华文化分享
 2024年6月，应邀参加 新加坡-快乐六一夏令营活动，为小朋友们分享中华传统文化，国画，中医。
-![](/knowledge-wiki/assets/images/2023-ShawnSang.png)
+![](/knowledge-wiki/assets/images/posts/lookup/2024-新加坡.jpg)
 
 
 
