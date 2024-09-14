@@ -1,7 +1,8 @@
 ---
-layout: "git-wiki-post"
+published: true
+keywords: jenkins prometheus ai
+descriptions: 集成 Jenkins 日志到 Prometheus中
 ---
-
 
 Jenkins 的状态和各种Job运行的情况是比较分散的，如果将Jenkins的这些信息集成到 Prometheus 中，就可以进一步使用 PromQL 对这些信息进行查询和分类汇总。
 
