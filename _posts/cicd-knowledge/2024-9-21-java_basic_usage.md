@@ -1,5 +1,10 @@
+---
+published: true
+keywords: Java basic usage
+descriptions: java 
+---
 
-当然可以。以下是一些Java基本语法的具体案例：
+以下是一些Java基本语法的具体案例：
 
 1.  **注释**：
     ```java

@@ -1,4 +1,10 @@
 
+---
+published: true
+keywords: Working with DevOps Mindset
+descriptions: devops mindset culture automation share
+---
+
 # 学习笔记： Working with DevOps Mindset
 
 Orignal course URL: [DevOps Culture and Mindset]( https://www.coursera.org/learn/devops-culture-and-mindset/home/info)
