@@ -2,7 +2,6 @@
 published: true
 keywords: Ubuntu, Configuration, Devops, Share, Automation, Culture, Mindset
 descriptions: agai server configuration
-title: Ubuntu Configuration
 ---
 
 # 时区更改为中国时区（`Asia/Shanghai`）
