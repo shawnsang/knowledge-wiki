@@ -479,3 +479,62 @@ Let's Encrypt 证书有效期为 90 天，需要定期续期。
 - 设置自动续期证书并重新加载 Nginx。
 
 按照以上步骤操作后，你的 Docker Compose 中的 Nginx 将支持 HTTPS。如果仍有问题，欢迎继续提问！
+
+
+# VNC 配置 TightVNC + XFCE4（最优轻量组合）
+步骤1：安装依赖
+```bash
+
+sudo apt update
+sudo apt install xfce4 xfce4-goodies tightvncserver -y
+```
+
+步骤2：初始化VNC并设置密码
+```bash
+
+vncserver # 首次运行，设置8位以内VNC密码
+vncserver -kill :1  # 关闭测试实例
+```
+
+步骤3：配置启动脚本 ~/.vnc/xstartup
+```bash
+#!/bin/bash
+
+# 修复dbus环境变量
+unset DBUS_SESSION_BUS_ADDRESS
+
+# 初始化X资源
+[ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
+
+# 设置桌面环境
+export XKL_XMODMAP_DISABLE=1
+export DESKTOP_SESSION=xfce
+export XDG_CURRENT_DESKTOP=XFCE
+export XDG_CONFIG_DIRS=/etc/xdg/xdg-xfce:/etc/xdg
+
+# 启动XFCE
+startxfce4 &
+```
+
+步骤4：启动VNC（限制资源）
+```bash
+
+vncserver -geometry 1024x768 -depth 24 :1 -localhost
+
+    -geometry 1024x768：降低分辨率减少显存占用
+
+    -depth 24：24位色深平衡画质与带宽
+
+    -localhost：安全限制，后续通过SSH隧道访问
+```
+
+
+本地使用 TightVNC Client访问：
+```
+192.168.1.1::5901
+```
+
+启动默认浏览器或者Firefox，出现错误(Client authorization failed)，需要扩展权限
+```bash
+xhost +
+```
